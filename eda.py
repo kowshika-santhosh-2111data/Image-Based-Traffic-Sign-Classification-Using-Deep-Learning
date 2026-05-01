@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import cv2
 
-base_path = "D:/DOWNLOADS/German_traffic"
+base_path = "German_traffic"
 
 def eda(train_data,base_path):
    
