@@ -198,8 +198,3 @@ test_road_data = [5,6,7,2]  # Example road data
 test_social_media_post = "There is a huge pothole on Main Street causing damage to cars!"  # Example post
 smart_mobility_system(test_image, test_road_data, test_social_media_post)
 
-#----------------------Test call-------------------------------
-test_image = np.random.rand(32, 32, 3)  # Example image
-test_road_data = [5,6,7,2]  # Example road data
-test_social_media_post = "There is a huge pothole on Main Street causing damage to cars!"  # Example post
-smart_mobility_system(test_image, test_road_data, test_social_media_post)
