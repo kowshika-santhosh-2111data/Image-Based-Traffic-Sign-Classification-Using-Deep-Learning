@@ -17,22 +17,13 @@ from sentiment_model import  train_sentiment_model, sentiment_mapping, get_categ
 from evaluation import evaluate_model
 
 #-----------load data-------------
-train_df = pd.read_csv(r"D:\DOWNLOADS\German_traffic\Train.csv")
+train_df = pd.read_csv(r"German_traffic\Train.csv")
 
 #train_df = pd.read_csv("Train.csv")
-base_path = "D:/DOWNLOADS/German_traffic"
+base_path = "German_traffic"
 
 #Add test here
-print("CSV Path:",train_df['Path'][0])
-
-test_path = os.path.normpath(os.path.join(base_path,train_df['Path'][0]))
-print("Full Image Path:",test_path)
-
-print("File Exists:",os.path.exists(test_path))
-
-img = cv2.imread(test_path)
-print("Image Loaded:",img is not None)
-
+RUN_EDA = True
 # -------- LOAD OR CREATE DATA --------
 if os.path.exists("x_data.npy") and os.path.exists("y_data.npy"):
     print("Loading data from .npy files...")
@@ -48,7 +39,8 @@ else:
     print("Saving data to .npy files...")
     np.save("x_data.npy", x)
     np.save("y_data.npy", y)
-
+if RUN_EDA:
+    eda(train_df,base_path)
 # -------- PREPROCESS --------
 x = preprocess_image_data(x)
 y = to_categorical(y, num_classes=43)
@@ -147,7 +139,7 @@ vectorizer = joblib.load('vectorizer.pkl')
 def smart_mobility_system(image, road_data, social_media_post):
 
     #---------------------Image---------------------------------
-    image = np.array(image)
+    image = np.array(image) / 255.0
 
     if image.shape != (32, 32, 3):
         raise ValueError("Image must be 32x32x3")
@@ -157,14 +149,20 @@ def smart_mobility_system(image, road_data, social_media_post):
     #----------------------Traffic Sign--------------------------
     sign_pred = loaded_cnn_model.predict(image)
     class_id = np.argmax(sign_pred)
-    sign_name = sign_classes[class_id]
     confidence_score = round(np.max(sign_pred) * 100, 2)
-    if confidence_score < 70:
+
+    if confidence_score < 50:
         sign_name = "Uncertain Sign"
+    else:
+        sign_name = sign_classes[class_id]
+
+    #debug
+    print("Raw prediction:", sign_pred)
+
     #----------------------Road Risk-----------------------------
     risk_input = pd.DataFrame([road_data], columns = [
         'traffic_density',
-        'road_accident',
+        'road_condition',
         'visibility',
         'accident_history'
     ])
@@ -180,7 +178,7 @@ def smart_mobility_system(image, road_data, social_media_post):
 
     #----------------------Category-------------------------------
     category = get_category(cleaned_text)
-    
+ 
     #----------------------FINAL OUTPUT-------------------------------
     print("\n======FINAL OUTPUT =======")
     print(f"Detected Sign: {sign_name}, Confidence Score: {confidence_score:.2f}%")
@@ -188,6 +186,17 @@ def smart_mobility_system(image, road_data, social_media_post):
     print(f"Complaint Sentiment: {sent_label}")
     print(f"Complaint Category: {category}")
 
+
+#----------------------Test call-------------------------------
+img = cv2.imread("German_traffic/Train/0/00000_00000_00000.png")
+if img is None:
+    raise ValueError("Image not loaded.check file path!")
+img = cv2.resize(img,(32,32))
+
+test_image = img  # Example image
+test_road_data = [5,6,7,2]  # Example road data
+test_social_media_post = "There is a huge pothole on Main Street causing damage to cars!"  # Example post
+smart_mobility_system(test_image, test_road_data, test_social_media_post)
 
 #----------------------Test call-------------------------------
 test_image = np.random.rand(32, 32, 3)  # Example image
