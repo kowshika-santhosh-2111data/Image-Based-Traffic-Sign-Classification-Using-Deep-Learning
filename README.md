@@ -59,7 +59,9 @@ traffic-sign-recognition/
 ### Link
 Download trained models from:
 https://drive.google.com/drive/folders/1ocqH2PH-XfRYgsLJqHOvEG7rIlw_IMH_?usp=drive_link
-Place them in the project folder before running.
+
+> Note: Place them in the project folder before running.
+
 ### Model & Data Files in the drive
 
 ```text
