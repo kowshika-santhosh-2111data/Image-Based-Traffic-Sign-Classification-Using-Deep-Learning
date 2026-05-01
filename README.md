@@ -59,7 +59,7 @@ traffic-sign-recognition/
 ### Link
 https://drive.google.com/drive/folders/1ocqH2PH-XfRYgsLJqHOvEG7rIlw_IMH_?usp=drive_link
 
-## Model & Data Files
+### Model & Data Files in the drive
 ```text
 -x_data.npy : Preprocessed image dat afor faster training.
 -vectorizer.pkl : Converts text into numerical features (TD-IDF)
