@@ -31,9 +31,9 @@ def eda(train_data,base_path):
     plt.show()
 
     # Visualize sample images from the dataset
-    plt.figure(figsize=(12, 8))
+    plt.figure(figsize=(10, 6))
     sample = train_data.sample(9)  # Randomly sample 9 images
-    for i,row in enumerate(sample.iterrows()):
+    for i,(_,row) in enumerate(sample.iterrows()):
         img_path = os.path.join(base_path, row['Path'])
         img = cv2.imread(img_path)
 
