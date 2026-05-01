@@ -1,6 +1,5 @@
 from sklearn.metrics import classification_report, confusion_matrix
 import numpy as np
-import joblib
 
 def evaluate_model(model, x_test, y_test):
     # Evaluate the model
