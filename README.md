@@ -60,12 +60,13 @@ traffic-sign-recognition/
 https://drive.google.com/drive/folders/1ocqH2PH-XfRYgsLJqHOvEG7rIlw_IMH_?usp=drive_link
 
 ## Model & Data Files
+```text
 -x_data.npy : Preprocessed image dat afor faster training.
 -vectorizer.pkl : Converts text into numerical features (TD-IDF)
 -road_risk_model.pkl : Random Forest model for road risk prediction.
 -sentiment_model.pkl : Model for sentiment analysis.
 -traffic_signal_model.keras : CNN model for traffic sign classification.
-
+```
 > Note: Due to Github file size limitation, model files are provided via external link.
 
 # Usage
@@ -91,7 +92,9 @@ The system will display:
 - Location
 
 ## Notes
+```text
 ~Ensure image is clear for better accuracy
 ~Enter exactly 4 numeric values for road data
 ~Models must be trained before running the app
 ~Location is used only for display (not prediction)
+```
