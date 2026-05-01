@@ -1,15 +1,16 @@
 # Image-Based-Traffic-Sign-Classification-Using-Deep-Learning
-**##Overview**
+##Overview
 The project develops a smart mobility system using machine learning and deep learning techniques. It uses CNN for traffic sign classification from images, a Random Forest model for road risk prediction based on tabular data , and a NLP  model using TF-IDF and Logistic Regression for sentiment analysis of  user complaints.
 
-**##Problem statement**
+## Problem statement
   For road safety, traffic signals are used to conevy the instructions to the drivers. An automated recognition system used to improve safety and efficieny on roads. for example, a system should recognize "speed limit sign board", it alerts the driver to drive the car at that particular speed.
 
-**##Dataset**
+## Dataset
   The dataset used for this project is the German Traffic Sign REcognition Benchmark(GTSRB). It consists of 50000 images categorize into 43 classes of traffic signs.
  - Train.csv: Contains paths & labels for training set.
  - Test.csv: Contains paths & labels for test set.
-**###Data Structure**
+   
+### Data Structure
 GTSRB/
 │
 ├── Train/
@@ -30,7 +31,7 @@ GTSRB/
 ├── Train.csv
 └── Test.csv
 
-**#Project Structure**
+## Project Structure
 
 traffic-sign-recognition/
 |
@@ -52,20 +53,20 @@ traffic-sign-recognition/
 ├── requirements.txt
 └── README.md
 
-**Link**
+### Link
 https://drive.google.com/drive/folders/1ocqH2PH-XfRYgsLJqHOvEG7rIlw_IMH_?usp=drive_link
 
-**##Model & Data Files**
+## Model & Data Files
 -x_data.npy : Preprocessed image dat afor faster training.
 -vectorizer.pkl : Converts text into numerical features (TD-IDF)
 -road_risk_model.pkl : Random Forest model for road risk prediction.
 -sentiment_model.pkl : Model for sentiment analysis.
 -traffic_signal_model.keras : CNN model for traffic sign classification.
 
->Note: Due to Github file size limitation, model files are provided via external link.
+> Note: Due to Github file size limitation, model files are provided via external link.
 
-**#Usage**
-##Step 1: Train Models
+# Usage
+## Step 1: Train Models
 Run:
 python main.py
 
@@ -74,11 +75,11 @@ This will:
   - Save .Keras and .pkl files
 Skip this step if model files already exist.
 
-#Step 2: Run the Application
+# Step 2: Run the Application
 streamlit run streamlit.py
 The app will open in your browser.
 
-**##Output**
+## Output
 The system will display:
 - Detected Traffic Sign + Confidence
 - Road Risk Level
@@ -86,7 +87,7 @@ The system will display:
 - Complaint Category
 - Location
 
-**##Notes**
+## Notes
 ~Ensure image is clear for better accuracy
 ~Enter exactly 4 numeric values for road data
 ~Models must be trained before running the app
