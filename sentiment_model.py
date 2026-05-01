@@ -3,6 +3,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from preprocessing import clean_text, tokenize_text, remove_stop_words
 
+
 def train_sentiment_model(df):
     # Clean the text data
     df['CleanedText'] = df[df.columns[0]].apply(clean_text)
