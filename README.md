@@ -79,7 +79,7 @@ This will:
   - Save .Keras and .pkl files
 Skip this step if model files already exist.
 
-# Step 2: Run the Application
+## Step 2: Run the Application
 streamlit run streamlit.py
 The app will open in your browser.
 
@@ -93,8 +93,8 @@ The system will display:
 
 ## Notes
 ```text
-~Ensure image is clear for better accuracy
-~Enter exactly 4 numeric values for road data
-~Models must be trained before running the app
-~Location is used only for display (not prediction)
+~ Ensure image is clear for better accuracy
+~ Enter exactly 4 numeric values for road data
+~ Models must be trained before running the app
+~ Location is used only for display (not prediction)
 ```
