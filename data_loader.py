@@ -6,7 +6,6 @@ import numpy as np
 def load_images(df,base_path):
     image = []
     labels = []
-    #base_path = r"C:\Users\Kowsh\Documents\mini project\Final project 1\german-traffic-sign"
 
     for i in range(len(df)):
         img_path = os.path.normpath(os.path.join(base_path, df['Path'][i]))
