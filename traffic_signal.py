@@ -8,9 +8,10 @@ def build_cnn ():
         layers.Conv2D(64, (3, 3), activation='relu'),
         layers.MaxPooling2D((2, 2)),
         layers.Conv2D(128, (3, 3), activation='relu'),
-        layers.MaxPooling2D((2, 2)),
+        llayers.Dropout(0.25),
         layers.Flatten(),
         layers.Dense(128, activation='relu'),
+        layers.Dropout(0.5),
         layers.Dense(43, activation='softmax')  # Assuming 43 classes
 
      ])
