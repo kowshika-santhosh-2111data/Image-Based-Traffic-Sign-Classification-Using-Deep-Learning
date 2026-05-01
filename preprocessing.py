@@ -7,6 +7,7 @@ import re
 from sklearn.preprocessing import StandardScaler
 
 
+
 #-------------------------------Image Data Preprocessing------------------------------------
 def preprocess_image_data(x):
     # Normalize pixel values
