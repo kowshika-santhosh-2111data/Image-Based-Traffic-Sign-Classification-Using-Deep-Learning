@@ -32,23 +32,24 @@ GTSRB/
 └── Test.csv
 
 ## Project Structure
-
 traffic-sign-recognition/
-|
-├──data/
-|  ├──Meta/
-|  ├──Test/
-|  ├──Train/
-│  └──...
-├──Scripts/
-|  ├── data_loader.py
-|  ├── preprocessing.py
-|  ├── eda.py
-|  ├── traffic_signal.py
-|  ├── road_risk.py
-|  ├── sentiment_model.py
-|  ├── evaluation.py
-|  └──streamlit.py
+│
+├── data/
+│   ├── Meta/
+│   ├── Test/
+│   ├── Train/
+│   └── ...
+│
+├── Scripts/
+│   ├── data_loader.py
+│   ├── preprocessing.py
+│   ├── eda.py
+│   ├── traffic_signal.py
+│   ├── road_risk.py
+│   ├── sentiment_model.py
+│   ├── evaluation.py
+│   └── streamlit.py
+│
 ├── main.py
 ├── requirements.txt
 └── README.md
