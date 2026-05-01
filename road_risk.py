@@ -2,6 +2,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 from preprocessing import preprocess_tabular_data
 
+
 def train_tabular_model(df, target_column="RiskLevel"):
     # Preprocess the tabular data
     x, y, scaler = preprocess_tabular_data(df, target_column)
