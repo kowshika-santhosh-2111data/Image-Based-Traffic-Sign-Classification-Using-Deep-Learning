@@ -11,6 +11,7 @@ The project develops a smart mobility system using machine learning and deep lea
  - Test.csv: Contains paths & labels for test set.
    
 ### Data Structure
+```text
 GTSRB/
 │
 ├── Train/
@@ -30,8 +31,9 @@ GTSRB/
 │
 ├── Train.csv
 └── Test.csv
-
+```
 ## Project Structure
+```text
 traffic-sign-recognition/
 │
 ├── data/
@@ -53,7 +55,7 @@ traffic-sign-recognition/
 ├── main.py
 ├── requirements.txt
 └── README.md
-
+```
 ### Link
 https://drive.google.com/drive/folders/1ocqH2PH-XfRYgsLJqHOvEG7rIlw_IMH_?usp=drive_link
 
